@@ -1,11 +1,7 @@
--- DDL: s_sql_dds.t_sql_source_unstructured
--- Сырая landing-таблица — все колонки хранятся как VARCHAR («данные как есть»).
--- Данные загружаются сюда без какой-либо трансформации из Python-приложения.
-
 create schema if not exists s_sql_dds;
 
 create table if not exists s_sql_dds.t_sql_source_unstructured (
-    student_name    varchar,   -- ФИО студента
+    student_name    varchar,   -- фио студента
     group_name      varchar,   -- учебная группа
     subject         varchar,   -- название предмета
     teacher         varchar,   -- преподаватель
@@ -14,5 +10,8 @@ create table if not exists s_sql_dds.t_sql_source_unstructured (
     retake_date     varchar,   -- дата пересдачи (сырая строка)
     grade           varchar,   -- оценка (может содержать мусор)
     attendance_pct  varchar,   -- процент посещаемости (может содержать мусор)
-    hours_studied   varchar    -- часов подготовки (может содержать мусор)
+    hours_studied   varchar,   -- часов подготовки (может содержать мусор)
+    valid_from      varchar,   -- дата начала действия версии записи scd type 2 (сырая строка)
+    valid_to        varchar,   -- дата окончания действия версии scd type 2 (сырая строка)
+    is_current      varchar    -- флаг актуальности версии (может содержать мусор)
 );

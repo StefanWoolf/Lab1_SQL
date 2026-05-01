@@ -1,9 +1,16 @@
-# config.py
 DB_CONFIG = {
     "host":     "localhost",
     "port":     5432,
     "dbname":   "sql_lab",
     "user":     "postgres",
+    "password": "100597",
+}
+
+MYSQL_CONFIG = {
+    "host":     "localhost",
+    "port":     3306,
+    "database": "sql_lab",
+    "user":     "root",
     "password": "100597",
 }
 

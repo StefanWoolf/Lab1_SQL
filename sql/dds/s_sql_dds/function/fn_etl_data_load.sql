@@ -137,7 +137,7 @@ begin
         where lower(trim(is_current)) in ('true', 'false', 't', 'f', '1', '0', 'yes', 'no')
     ),
 
-    -- шаг 9: финальная трансформация — приведение типов, исправление аномалий
+    -- шаг 9: финальная трансформация - приведение типов, исправление аномалий
     cleaned as (
         select
             trim(student_name)               as student_name,

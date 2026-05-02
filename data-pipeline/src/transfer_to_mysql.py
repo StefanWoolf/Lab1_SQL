@@ -23,9 +23,6 @@ create table if not exists t_dm_task (
 
 
 def transfer_to_mysql() -> None:
-    """
-    Reads data from v_dm_task (PostgreSQL) and inserts it into t_dm_task (MySQL).
-    """
     # читаем из PostgreSQL
     pg_conn = psycopg2.connect(**DB_CONFIG)
     try:

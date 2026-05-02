@@ -7,18 +7,8 @@ from config import DATASET_ROWS, ETL_START_DATE, ETL_END_DATE
 
 
 def etl() -> None:
-    """
-    Top-level ETL pipeline (no input parameters).
-
-    Steps:
-        1. get_dataset()          — generate synthetic dataset with anomalies
-        2. load_data_to_db()      — load raw data into t_sql_source_unstructured
-        3. fill_structured_table() — clean and load into t_sql_source_structured
-        4. fill_dm_table()        — fill dimensions and t_dm_task
-        5. transfer_to_mysql()    — copy v_dm_task data to MySQL
-    """
     print("=" * 55)
-    print("ETL-конвейер запущен")
+    print("конвейер запущен")
     print("=" * 55)
 
     df = get_dataset(n_rows=DATASET_ROWS)
@@ -28,5 +18,5 @@ def etl() -> None:
     transfer_to_mysql()
 
     print("=" * 55)
-    print("ETL-конвейер успешно завершён.")
+    print("конвейер успешно завершён.")
     print("=" * 55)
